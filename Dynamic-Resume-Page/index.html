@@ -1,0 +1,213 @@
+﻿<link href="https://fonts.googleapis.com/css?family=Kanit:300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        font-family: 'Kanit', sans-serif;
+        color: aliceblue;
+        background-image: linear-gradient(to right top, #bd2ccb, #d91db5, #ec1a9e, #f82989, #fe3d76, #ff5464, #ff6a55, #ff8049, #ff9e3d, #fabc39, #eed944, #dbf65d);
+    }
+    
+</style>
+<body id="body" class="dark-mode">
+
+    <label class="switch">
+        <input name="dark_light" type="checkbox" onclick="toggleDarkLight()" checked>
+        <span class="slider round"></span>
+      </label>
+      <div class="row">
+          <b style="padding-bottom: 5px;">Dark Mode</b>
+        </div>
+ 
+     
+  
+<center>
+<div class="zoom">
+                <img onclick="myFunction()" class="avatar" src="image/profile.jpg"/>
+            </div>
+            
+            <div style="display: none;" id="myDIV2">
+            <input type="text"
+           id="myText"
+           value=""> 
+  
+    <button class="btn btn-primary btn-small" type="button" 
+            onclick="myFunction2()"> 
+     SETNAME
+  </button> 
+  </div>
+  
+   <div class="row"><h1 id="demo">Wisarut Dokmaikul</h1><button class="btn btn-primary btn-small"  onclick="myFunction3()">Edit Name</button></div>
+
+<h2>ชื่อเล่น ปอนด์</h2>
+<h2>Software Engineering NPRU</h2>
+<h2>ความสามารถพิเศษ</h2>
+
+<ul id="list">
+        <li>เล่นดนตรีได้</li>
+        <li>เขียนโปรแกรม</li>
+        <li>ออกแบบเว็ป</li>
+      </ul> 
+      
+      <button class="btn btn-primary btn-small"  onclick="myFunction()">Edit</i></button>
+      <div style="display: none;" id="myDIV">
+      <input placeholder="คลิกความสามารถมา 1 อย่าง" type="text" id="txt">
+      <button class="btn btn-primary btn-small" onclick="addLI()">Add</button>
+      <button  class="btn btn-primary btn-small" onclick="editLI()">Edit</button>
+      <button  class="btn btn-primary btn-small" onclick="deleteLI()">Delete</button>
+    </div>
+<h2>Contact</h2>
+
+<div class="zoom">
+<a href="https://www.facebook.com/pondwsr"  class="fa fa-facebook"></a>
+<a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+<a href="" class="fa fa-google"></a>
+</div>
+<br>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+</body>
+<script>
+        document.write(Date());
+        </script>
+        </center>
+        <script>
+                function myFunction() {
+                  alert("Hello!");
+                }
+                </script>
+                <script>
+                        //Get the button
+                        var mybutton = document.getElementById("myBtn");
+                        
+                        // When the user scrolls down 20px from the top of the document, show the button
+                        window.onscroll = function() {scrollFunction()};
+                        
+                        function scrollFunction() {
+                          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                            mybutton.style.display = "block";
+                          } else {
+                            mybutton.style.display = "none";
+                          }
+                        }
+                        
+                        // When the user clicks on the button, scroll to the top of the document
+                        function topFunction() {
+                          document.body.scrollTop = 0;
+                          document.documentElement.scrollTop = 0;
+                        }
+                        </script>
+                          <script>
+            
+                            var inputText = document.getElementById("txt"),
+                                 items = document.querySelectorAll("#list li"),
+                                 tab = [], index;
+                         
+                             // get the selected li index using array
+                             // populate array with li values
+                             
+                             for(var i = 0; i < items.length; i++){
+                                 tab.push(items[i].innerHTML);
+                             }
+                             
+                             // get li index onclick
+                             for(var i = 0; i < items.length; i++){
+                                 
+                                 items[i].onclick = function(){
+                                     index = tab.indexOf(this.innerHTML);
+                                     console.log(this.innerHTML + " INDEX = " + index);
+                                     // set the selected li value into input text
+                                     inputText.value = this.innerHTML;
+                                 };
+                                 
+                             }
+                            
+                            function refreshArray()
+                            {
+                                // clear array
+                                tab.length = 0;
+                                items = document.querySelectorAll("#list li");
+                                // fill array
+                                for(var i = 0; i < items.length; i++){
+                                 tab.push(items[i].innerHTML);
+                               }
+                            }
+                            function addLI(){
+                                
+                                var listNode = document.getElementById("list"),
+                                    textNode = document.createTextNode(inputText.value),
+                                    liNode = document.createElement("LI");
+                                    
+                                    liNode.appendChild(textNode);
+                                    listNode.appendChild(liNode);
+                                    
+                                    refreshArray();
+                                    
+                                    // add event to the new LI
+                                    
+                                    liNode.onclick = function(){
+                                     index = tab.indexOf(liNode.innerHTML);
+                                     console.log(liNode.innerHTML + " INDEX = " + index);
+                                     // set the selected li value into input text
+                                     inputText.value = liNode.innerHTML;
+                                 };
+                                    
+                             }
+                             
+                             function editLI(){
+                                 // edit the selected li using input text
+                                 items[index].innerHTML = inputText.value;
+                                 refreshArray();
+                              }
+                              
+                              function deleteLI(){
+                                  
+                                      refreshArray();
+                                      if(items.length > 0){
+                                          items[index].parentNode.removeChild(items[index]);
+                                          inputText.value = "";
+                                      }
+                              }
+                            
+                        </script>
+                        <script>
+                          function myFunction() {
+                            var x = document.getElementById("myDIV");
+                            if (x.style.display === "none") {
+                              x.style.display = "block";
+                            } else {
+                              x.style.display = "none";
+                            }
+                          }
+                          </script>
+                          <script>
+                                function myFunction3() {
+                                  var x = document.getElementById("myDIV2");
+                                  if (x.style.display === "none") {
+                                    x.style.display = "block";
+                                  } else {
+                                    x.style.display = "none";
+                                  }
+                                }
+                                </script>
+
+  <script>
+  function toggleDarkLight() {
+    var body = document.getElementById("body");
+    var currentClass = body.className;
+    body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+  }
+  </script>
+  
+  <script> 
+        // Here the value is stored in new variable x  
+  
+        function myFunction2() { 
+            var x =  
+                document.getElementById("myText").value; 
+            
+            document.getElementById( 
+              "demo").innerHTML = x; 
+        } 
+    </script>

@@ -1,0 +1,68 @@
+<link href="https://fonts.googleapis.com/css?family=Kanit:300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body{
+        font-family: 'Kanit', sans-serif;
+        color: aliceblue;
+        background-image: linear-gradient(to right top, #bd2ccb, #d91db5, #ec1a9e, #f82989, #fe3d76, #ff5464, #ff6a55, #ff8049, #ff9e3d, #fabc39, #eed944, #dbf65d);
+    }
+</style>
+<center>
+<div class="zoom">
+                <img onclick="myFunction()" class="avatar" src="image/profile.jpg"/>
+            </div>
+ 
+
+<h1>Wisarut Dokmaikul</h1>
+<h2>ชื่อเล่น ปอนด์</h2>
+<h2>Software Engineering NPRU</h2>
+
+<h2>ความสามารถพิเศษ</h2>
+<ul>
+        <li>เล่นดนตรีได้</li>
+        <li>เขียนโปรแกรม</li>
+        <li>ออกแบบเว็ป</li>
+      </ul> 
+
+<h2>Contact</h2>
+
+
+<a href="https://www.facebook.com/pondwsr"  class="fa fa-facebook"></a>
+<a href="https://www.twitter.com/pondwsr" class="fa fa-twitter"></a>
+<a href="" class="fa fa-google"></a>
+
+<br>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+        document.write(Date());
+        </script>
+        </center>
+        <script>
+                function myFunction() {
+                  alert("Hello!");
+                }
+                </script>
+                <script>
+                        //Get the button
+                        var mybutton = document.getElementById("myBtn");
+                        
+                        // When the user scrolls down 20px from the top of the document, show the button
+                        window.onscroll = function() {scrollFunction()};
+                        
+                        function scrollFunction() {
+                          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                            mybutton.style.display = "block";
+                          } else {
+                            mybutton.style.display = "none";
+                          }
+                        }
+                        
+                        // When the user clicks on the button, scroll to the top of the document
+                        function topFunction() {
+                          document.body.scrollTop = 0;
+                          document.documentElement.scrollTop = 0;
+                        }
+                        </script>
